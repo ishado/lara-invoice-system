@@ -28,9 +28,9 @@ return [
     'add_another_product'       => 'Add another product',
     'sub_total'                 => 'Sub Total',
     'discount'                  => 'Discount',
-    'sr'                        => 'SR',
+    'eg'                        => 'EGP',
     'percentage'                => 'Percentage',
-    'vat'                       => 'VAT (5%)',
+    'vat'                       => 'VAT (14%)',
     'shipping'                  => 'Shipping',
     'total_due'                 => 'Total Due',
     'save'                      => 'Save',
@@ -45,12 +45,12 @@ return [
     'print_date'                => 'Print date',
     'invoice_title'             => 'Invoice',
     'seller'                    => 'Seller',
-    'seller_name'               => 'Sami Mansour Youtube Channel',
+    'seller_name'               => 'INVOICE SYSTEM',
     'seller_phone'              => '9200000000',
     'seller_vat'                => '123456789',
-    'seller_address'            => 'Jeddah, KSA',
+    'seller_address'            => 'Zagazig, EG',
     'buyer'                     => 'Buyer',
-    'sar_with_amount'           => 'SAR :amount',
+    'sar_with_amount'           => 'EGP :amount',
 
     'actions'                   => 'Actions',
     'created_successfully'      => 'Created Successfully',
@@ -61,4 +61,5 @@ return [
     'deleted_failed'            => 'Deleted Failed',
     'sent_successfully'         => 'Email Sent Successfully',
 
+    'r_u_sure'                  => 'Are you sure you want to delete it?',
 ];

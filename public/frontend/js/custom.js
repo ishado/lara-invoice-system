@@ -63,7 +63,7 @@ $(document).ready(function(){
         let discount_value = parseFloat($('.discount_value').val()) || 0;
         let discountVal = discount_value != 0 ? discount_type == 'percentage' ? sub_totalVal * (discount_value / 100) : discount_value : 0;
 
-        let vatVal = (sub_totalVal - discountVal) * 0.05;
+        let vatVal = (sub_totalVal - discountVal) * 0.14;
 
         return vatVal.toFixed(2);
     }
@@ -126,6 +126,8 @@ $(document).ready(function(){
             'company_name' : { required:true },
             'invoice_number' : { required:true, digits: true },
             'invoice_date' : { required:true },
+            'discount_value' : { required:true },
+            'shipping' : { required:true },
         },
         submitHandler: function (form) {
             form.submit();

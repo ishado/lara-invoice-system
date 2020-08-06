@@ -85,6 +85,7 @@
 
         <main class="py-4">
             <div class="container">
+                @include('partial.flash')
                 @yield('content')
             </div>
         </main>
