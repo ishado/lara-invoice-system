@@ -7,24 +7,29 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __('Frontend/frontend.invoice_system') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome/all.min.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @if(config('app.locale') == 'ar')
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-rtl.css') }}">
+    @endif
+    @yield('style')
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ __('Frontend/frontend.invoice_system') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,10 +46,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item px-2">
-                                <a class="btn btn-primary" href="#">ع</a>
+                                <a class="btn btn-primary" href="{{ route('frontend_change_locale', 'ar') }}">ع</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-secondary" href="#">E</a>
+                                <a class="btn btn-secondary" href="{{ route('frontend_change_locale', 'en') }}">E</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -84,5 +89,19 @@
             </div>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('frontend/js/fontawesome/all.min.js') }}"></script>
+    <script>
+        $(function () {
+                $('#session-alert').fadeTo(2000, 500).slideUp(500, function () {
+                    $('#session-alert').slideUp(500);
+                })
+            })
+    </script>
+
+    @yield('script')
+
 </body>
 </html>

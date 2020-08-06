@@ -8,7 +8,7 @@
                     INDEX
                 </div>
                 <div class="card-body">
-
+                    {{ config('app.locale') }}
                 </div>
             </div>
         </div>
